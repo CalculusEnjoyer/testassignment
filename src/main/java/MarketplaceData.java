@@ -73,7 +73,7 @@ public class MarketplaceData {
         if(!customers.containsKey(customerId)){
             throw new Exception("There is no customer with such ID");
         }else if(!products.containsKey(productId)){
-            throw new Exception("There is no customer with such ID");
+            throw new Exception("There is no product with such ID");
         }else if(customers.get(customerId).getAmountOfMoney()<products.get(productId).getPrice()){
             throw new Exception("The customer do not have enough money to buy this product");
         }else{
