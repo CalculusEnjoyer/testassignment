@@ -97,7 +97,7 @@ public class MarketplaceData {
             products.remove(productId);
         }
     }
-
+    //Display list of products that a particular customer has bought
     public void displayCustomerPurchases(int customerId){
         if (purchases.get(customerId).size()==0) System.out.println("The list of customer's purchases is empty");
         else {
