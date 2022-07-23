@@ -119,8 +119,9 @@ public class ConsoleMenu {
                 Scanner scanner = new Scanner(System.in);
                 int customerId;
                 int productId;
-                System.out.println("Please enter customer's ID:");
+                System.out.println("Please enter customer's ID: (if you want to go back to menu enter -1)");
                 customerId = scanner.nextInt();
+                if(customerId==-1) return;
                 System.out.println("Please enter product's ID:");
                 productId= scanner.nextInt();
                 marketplace.buyProduct(customerId,productId);
@@ -131,7 +132,7 @@ public class ConsoleMenu {
             }
         }
     }
-
+    //Display list of products that a particular customer has bought
     public void displayCustomerPurchasesConsole(MarketplaceData marketplace){
         while(true){
             try{
