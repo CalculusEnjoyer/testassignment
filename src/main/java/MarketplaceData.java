@@ -129,6 +129,7 @@ public class MarketplaceData {
         }else{
             for(Map.Entry<Integer, List<Integer>> user : purchases.entrySet()){
                 for(int i =0;i<user.getValue().size();i++){
+                    //Removes from all customer purchases
                     if(user.getValue().get(i)==productId) user.getValue().remove(i);
                 }
             }
