@@ -28,6 +28,7 @@ public class MarketplaceData {
             Customer newCustomer = new Customer(fistName,lastName,amountOfMoney);
             purchases.put(nextNewUserId,new ArrayList<>());
             customers.put(nextNewUserId,newCustomer);
+            System.out.println("Customer was successfully added with following customer ID: "+nextNewUserId);
             nextNewUserId++;
         }
     }
@@ -38,6 +39,7 @@ public class MarketplaceData {
         else{
             Product newProduct = new Product(name, price);
             products.put(nextNewProductId,newProduct);
+            System.out.println("Product was successfully added with following customer ID: "+nextNewProductId);
             nextNewProductId++;
         }
     }
