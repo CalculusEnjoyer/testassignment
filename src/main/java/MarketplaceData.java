@@ -13,45 +13,6 @@ public class MarketplaceData {
     //Here key is customer's ID and object is a list of purchased products IDs.
     private Map<Integer, List<Integer>> purchases = new HashMap<>();
 
-    public static int getNextNewUserId() {
-        return nextNewUserId;
-    }
-
-    public static void setNextNewUserId(int nextNewUserId) {
-        MarketplaceData.nextNewUserId = nextNewUserId;
-    }
-
-    public static int getNextNewProductId() {
-        return nextNewProductId;
-    }
-
-    public static void setNextNewProductId(int nextNewProductId) {
-        MarketplaceData.nextNewProductId = nextNewProductId;
-    }
-
-    public Map<Integer, Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(Map<Integer, Customer> customers) {
-        this.customers = customers;
-    }
-
-    public Map<Integer, Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Map<Integer, Product> products) {
-        this.products = products;
-    }
-
-    public Map<Integer, List<Integer>> getPurchases() {
-        return purchases;
-    }
-
-    public void setPurchases(Map<Integer, List<Integer>> purchases) {
-        this.purchases = purchases;
-    }
 
     public void addCustomer(String fistName, String lastName, double amountOfMoney) throws Exception{
         if(fistName.equals("")){
@@ -168,4 +129,43 @@ public class MarketplaceData {
         if(!isSbBoughtProduct) System.out.println("Nobody has bought this product yet");
     }
 
+    public static int getNextNewUserId() {
+        return nextNewUserId;
+    }
+
+    public static void setNextNewUserId(int nextNewUserId) {
+        MarketplaceData.nextNewUserId = nextNewUserId;
+    }
+
+    public static int getNextNewProductId() {
+        return nextNewProductId;
+    }
+
+    public static void setNextNewProductId(int nextNewProductId) {
+        MarketplaceData.nextNewProductId = nextNewProductId;
+    }
+
+    public Map<Integer, Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Map<Integer, Customer> customers) {
+        this.customers = customers;
+    }
+
+    public Map<Integer, Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Map<Integer, Product> products) {
+        this.products = products;
+    }
+
+    public Map<Integer, List<Integer>> getPurchases() {
+        return purchases;
+    }
+
+    public void setPurchases(Map<Integer, List<Integer>> purchases) {
+        this.purchases = purchases;
+    }
 }
