@@ -1,5 +1,2 @@
 .idea
-*.iml
-/out
 target
-.DS_STORE /src/main/resources/log

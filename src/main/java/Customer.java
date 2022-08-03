@@ -1,11 +1,13 @@
+import java.util.Objects;
+
 public class Customer {
     private String firstName;
     private String lastName;
     private double amountOfMoney;
 
-    public Customer(String firstName, String lastName,double amountOfMoney){
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Customer(String firstName, String lastName, double amountOfMoney){
+        this.lastName = Objects.requireNonNull(lastName);
+        this.firstName = Objects.requireNonNull(firstName);
         this.amountOfMoney = amountOfMoney;
     }
 
@@ -14,7 +16,7 @@ public class Customer {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.firstName = Objects.requireNonNull(firstName);
     }
 
     public String getLastName() {
@@ -22,7 +24,7 @@ public class Customer {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastName = Objects.requireNonNull(lastName);
     }
 
     public double getAmountOfMoney() {
@@ -31,5 +33,20 @@ public class Customer {
 
     public void setAmountOfMoney(double amountOfMoney) {
         this.amountOfMoney = amountOfMoney;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Double.compare(customer.getAmountOfMoney(), getAmountOfMoney()) == 0 &&
+                              getFirstName().equals(customer.getFirstName()) &&
+                              getLastName().equals(customer.getLastName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getFirstName(), getLastName(), getAmountOfMoney());
     }
 }
